@@ -7,7 +7,7 @@ export function ScheduleSection({ schedules }: { schedules: TripSchedule[] }) {
     <Section
       eyebrow="02 · ITINERARY"
       title="일정"
-      description="대략적인 일정임 맞출필요 없음"
+      description="대략적인 일정임 맞출필요 없음 (서바이벌은 맞춰야함)"
     >
       <div className="timeline">
         {schedules.map((item) => (
