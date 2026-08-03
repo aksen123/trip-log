@@ -1,5 +1,23 @@
-import { Section } from './Section'
+import { Section } from "./Section";
 
 export function AdditionalNotesSection({ notes }: { notes: string[] }) {
-  return <Section eyebrow="06 · NOTES" title="마지막으로"><ul className="plain-list">{notes.map((note) => <li key={note}>{note}</li>)}</ul></Section>
+  return (
+    <Section
+      eyebrow="06 · ONE MORE THING"
+      title="마지막으로 😏"
+      className="closing-section"
+    >
+      <div className="closing-message">
+        <span className="closing-emoji" aria-hidden="true">
+          📣
+        </span>
+        <div>
+          {notes.map((note) => (
+            <p key={note}>{note}</p>
+          ))}
+        </div>
+      </div>
+      <p className="closing-signoff">그럼 다들 건강하게 만납시다.</p>
+    </Section>
+  );
 }
