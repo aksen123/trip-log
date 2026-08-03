@@ -4,7 +4,15 @@ export type TripSchedule = {
   title: string
   description?: string
   location?: string
-  mapUrl?: string
+  mapQuery?: string
+}
+
+export type TripVehicle = {
+  id: string
+  driver: string
+  vehicle?: string
+  passengers: string[]
+  note?: string
 }
 
 export type Trip = {
@@ -16,17 +24,21 @@ export type Trip = {
   endDate: string
   dateLabel: string
   location: string
-  notices: string[]
   schedules: TripSchedule[]
+  vehicles: TripVehicle[]
   accommodation?: {
     name: string
     address: string
     checkIn?: string
     checkOut?: string
-    mapUrl?: string
+    mapQuery?: string
   }
   checklist: string[]
   settlementNotes: string[]
-  participants: string[]
+  attendance: {
+    confirmed: string[]
+    tentative: string[]
+    declined: string[]
+  }
   additionalNotes: string[]
 }
