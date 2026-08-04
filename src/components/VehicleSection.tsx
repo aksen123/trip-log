@@ -23,12 +23,14 @@ export function VehicleSection({ vehicles }: { vehicles: TripVehicle[] }) {
                   <h3>{vehicle.vehicle ?? `${vehicle.driver} 차`}</h3>
                 </div>
               </div>
-              <div className="passenger-list">
-                <p>함께 타는 사람</p>
-                <ul>
-                  {vehicle.passengers.map((passenger) => <li key={passenger}>{passenger}</li>)}
-                </ul>
-              </div>
+              {vehicle.passengers.length > 0 && (
+                <div className="passenger-list">
+                  <p>함께 타는 사람</p>
+                  <ul>
+                    {vehicle.passengers.map((passenger) => <li key={passenger}>{passenger}</li>)}
+                  </ul>
+                </div>
+              )}
               {vehicle.note && <p className="vehicle-note">{vehicle.note}</p>}
             </article>
           ))}

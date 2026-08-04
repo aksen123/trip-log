@@ -1,4 +1,5 @@
 import type { TripSchedule } from "../types/trip";
+import { CopyableLocation } from "./CopyableLocation";
 import { MapLinks } from "./MapLinks";
 import { Section } from "./Section";
 
@@ -17,7 +18,12 @@ export function ScheduleSection({ schedules }: { schedules: TripSchedule[] }) {
             <div className="schedule-content">
               <h3>{item.title}</h3>
               {item.description && <p>{item.description}</p>}
-              {item.location && <p className="location">⌖ {item.location}</p>}
+              {item.location && item.copyAddress && (
+                <CopyableLocation label={item.location} value={item.copyAddress} />
+              )}
+              {item.location && !item.copyAddress && (
+                <p className="location-label">⌖ {item.location}</p>
+              )}
               {item.mapQuery && <MapLinks query={item.mapQuery} />}
             </div>
           </article>

@@ -4,6 +4,7 @@ export type TripSchedule = {
   title: string
   description?: string
   location?: string
+  copyAddress?: string
   mapQuery?: string
 }
 

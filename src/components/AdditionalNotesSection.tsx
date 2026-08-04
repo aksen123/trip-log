@@ -8,9 +8,7 @@ export function AdditionalNotesSection({ notes }: { notes: string[] }) {
       className="closing-section"
     >
       <div className="closing-message">
-        <span className="closing-emoji" aria-hidden="true">
-          📣
-        </span>
+
         <div>
           {notes.map((note) => (
             <p key={note}>{note}</p>
